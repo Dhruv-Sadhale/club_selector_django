@@ -1,0 +1,27 @@
+{% comment %} <a  href="/">
+    <h1> LOGO </h1>
+       
+</a>  {% endcomment %}
+
+ <!-- Navigation Bar -->
+ <nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="/"> <img src="college-logo.png" alt="College Logo"></a>
+            
+        </div>
+        <a href="/"><div>Club Navigator Plus</div></a>
+        <ul class="nav-links">
+            <li><a href="#fests">More about Fests</a></li>
+            <li><a href="#aptitude-test">Take Aptitude Test</a></li>
+            {%if request.user.is_authenticated%}
+            <a href="{% url 'logout' %}">Logout</a>
+            {%else%}
+            <li><a href="{%url 'login' %}">Sign In</a></li>
+            {%endif%}
+            <li><a href="#discover">Discover the College</a></li>
+            <li><a href="#more-info">More Info and Contacts</a></li>
+        </ul>
+    </div>
+</nav>
+
