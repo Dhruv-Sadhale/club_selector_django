@@ -2,6 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+
+class QuizResponse(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    question1 = models.IntegerField()
+    question2 = models.IntegerField()
+    # question3 = models.IntegerField()
+    # ... add fields for other questions (question3, question4, ..
 class Topic(models.Model):
     name= models.CharField(max_length=200)
 
